@@ -1,0 +1,28 @@
+* D:\Education\Phys3330\Spring2013\FinalProject\HapticGlove\Schematics\FlexOpAmp.asc
+XU2 P001 UE_Fixed_DC V=15
+XU3 P002 UE_Fixed_DC V=-15
+R N001 N002 100k
+R§FlexSens N001 0 50k
+V§FGen N005 0 SINE(0 900mV 1k)
+XLED N002 N007 Yellow
+XLF356a N005 N001 P001 P002 N002 LF356
+XU1 P003 UE_Fixed_DC V=15
+XU4 P004 UE_Fixed_DC V=-15
+R1 N003 N004 100k
+R§FlexSens1 N003 0 20k
+V§FGen1 N006 0 SINE(0 900mV 1k)
+XLED1 N004 P005 Yellow
+XLF356b N006 N003 P003 P004 N004 LF356
+R2 N007 0 50
+R3 P005 0 50
+;op
+.lib LF356.sub
+.tran .05
+* Flex Sensor\n range ~20k at rest, \n>50k when flexed.
+* Flex Sensor\n range ~20k at rest, \n>50k when flexed.
+* NO BEND
+* BEND
+.lib UE_Base.lib
+.lib UE_LED.lib
+.backanno
+.end
